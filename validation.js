@@ -111,10 +111,17 @@ var validation = (function() {
                     $("#loader").show();
                 },
                 success: function (msg){
-                    $("#message").html(msg);
+                    if (msg)
+                    {
+                        $("#message").html(msg);
+                    }
+                    else
+                    {
+                        window.location = "https://www.google.com";
+                    }
                 },
-                error: function(error) {
-                    $("#message").html(error);
+                error: function(msg) {
+                    $("#message").html(msg);
                 },
                 complete:function(){
                     $('body, html').animate({scrollTop:$('form').offset().top}, 'slow');

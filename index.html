@@ -27,7 +27,7 @@
 	  </div>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
 		<a href="index.html" ><img class="logo" src="logo2.png"></a> 
-		<form id="loginform" method="POST" style="padding-left:50%; margin-top:10px;" action="loginvalidate.php">
+		<form id="loginform" method="POST" style="padding-left:50%; margin-top:10px;" action="userprofile.php">
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<input type="email" class="form-control" name="loginemail" id="loginemail" placeholder="Enter Email*">
@@ -46,24 +46,16 @@
         <label><i>It's free and takes only a minute.</i></label>
 		<div id="message"></div>
         <div class="form-row">
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-6">
 				<input type="text" class="form-control" name="firstname" id="firstname" autocomplete="off" placeholder="First Name*">
 			</div>
-			<div class="form-group col-md-4">
-				<input type="text" class="form-control" name="middlename" id="middlename" autocomplete="off" placeholder="Middle Name">
-			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-6">
 				<input type="text" class="form-control" name="lastname" id="lastname" autocomplete="off" placeholder="Last Name*">
 			</div>
 		</div>
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<input type="text" maxlength="10" autocomplete="off" class="form-control" name="phone" id="phone" placeholder="Mobile Number*">   
-            </div>
-            <div class="form-group col-md-6">
-				<input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email*">
-			</div>       
-		</div>
+		<div class="form-group col-md-13">
+			<input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email*">
+		</div>       
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<input type="password" class="form-control" id="password1" name="password1" autocomplete="off" placeholder="Password*">
@@ -85,6 +77,6 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 	<script language="javascript" type="text/javascript" src="validation.js"></script>
-	<script language="javascript" type="text/javascript" src="login.js"></script>    
+	<!--<script language="javascript" type="text/javascript" src="login.js"></script>    -->
 </body>
 </html>
