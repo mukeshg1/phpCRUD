@@ -51,8 +51,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["id"]."</td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>".$row["email"]."</td><td><input type='button' value='Edit' id='b_Edit'>
-        <input type='button' value='Delete' id='b_Del'></td></tr>";
+        echo "<tr><td>".$row["id"]."</td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>".$row["email"]."
+        </td><td><input class='btn btn-primary' type='button' value='Update' id='b_Update'>
+        <input class='btn btn-secondary' type='button' value='Delete' id='b_Del'></td></tr>";
     }
 } else {
     echo "0 results";
@@ -61,7 +62,45 @@ $conn->close();
 ?>
     </tbody>
     </table>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="updateModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5>Update User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="firstname" id="firstname" autocomplete="off" placeholder="First Name*">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="lastname" id="lastname" autocomplete="off" placeholder="Last Name*">
+                </div>
+            </div>
+            <div class="form-group col-md-13">
+                <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email*">
+            </div>       
+            <div class="form-row">
+                <div class="form-group col-md-6">    
+                    <button name="submit_btn" id="submit_btn" class="btn btn-primary btn-block btn-huge">Save changes</button>
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-secondary btn-block btn-huge" data-dismiss="modal">Close</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script language="javascript" type="text/javascript" src="crud.js"></script>
     </body>
     </html>

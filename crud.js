@@ -1,10 +1,9 @@
 var validation = (function() {
 
     
-    /*$("#b_Edit").click(function() {
-
-
-    });*/
+    $("#b_Update").click(function() {
+        $("#updateModal").modal();
+    });
 
     $("#b_Del").click(function() {
         var del_id = $(this).closest('tr').find('td:eq(0)').text();
