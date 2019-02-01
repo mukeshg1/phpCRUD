@@ -101,9 +101,7 @@ var validation = (function() {
                 url: "add-user.php",
                 data: {
                     firstname   : $("#firstname").val(),  
-                    middlename  : $("#middlename").val(),
                     lastname    : $("#lastname").val(),   
-                    phone       : $("#phone").val(), 
                     email       : $("#email").val(),
                     password1   : $("#password1").val()
                 },
@@ -117,7 +115,7 @@ var validation = (function() {
                     }
                     else
                     {
-                        window.location = "https://www.google.com";
+                        window.location = "#";
                     }
                 },
                 error: function(msg) {
@@ -137,7 +135,26 @@ var validation = (function() {
         {
             $("#message").html("Enter valid details.");
         }
-    });	
+    });
+    
+    $("#login_btn").click(function(){
+
+        $.ajax({
+            type: "POST",
+            url: "userprofile.php",
+            data:{
+                loginemail     : $("#loginemail").val(),  
+                loginpassword  : $("#loginpassword").val(),   
+            },
+            success: function (loginmsg){
+                $("#loginmsg").html(loginmsg);
+                window.loader = "userprofile.php";
+            }
+
+        });
+        return false;
+
+    });
     
     return
     {

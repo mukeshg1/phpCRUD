@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -25,7 +26,7 @@ $result = $conn->query($sql);
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="userprofile.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="all-user.php">All users</a>
@@ -77,25 +78,26 @@ $conn->close();
             </button>
         </div>
         <div class="modal-body">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="firstname" id="firstname" autocomplete="off" placeholder="First Name*">
+            <i><div id ="updatemsg"></div></i>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="updatefirstname" id="updatefirstname" autocomplete="off" placeholder="First Name*">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="updatelastname" id="updatelastname" autocomplete="off" placeholder="Last Name*">
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="lastname" id="lastname" autocomplete="off" placeholder="Last Name*">
+                <div class="form-group col-md-13">
+                    <input type="email" name="updateemail" id="updateemail" class="form-control" autocomplete="off" placeholder="Email*">
+                </div>       
+                <div class="form-row">
+                    <div class="form-group col-md-6">    
+                        <button name="save_btn" id="save_btn" class="btn btn-primary btn-block btn-huge">Save changes</button>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <button type="button" id="close_btn" class="btn btn-secondary btn-block btn-huge" data-dismiss="modal">Close</button>
+                    </div>  
                 </div>
-            </div>
-            <div class="form-group col-md-13">
-                <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email*">
-            </div>       
-            <div class="form-row">
-                <div class="form-group col-md-6">    
-                    <button name="submit_btn" id="submit_btn" class="btn btn-primary btn-block btn-huge">Save changes</button>
-                </div>
-                <div class="form-group col-md-6">
-                    <button type="button" class="btn btn-secondary btn-block btn-huge" data-dismiss="modal">Close</button>
-                </div>  
-            </div>
         </div>
     </div>
     </div>

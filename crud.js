@@ -1,14 +1,38 @@
 var validation = (function() {
 
     
-    $("#b_Update").click(function() {
+    $( "table tbody" ).on( "click", "#b_Update", function(){
+        
+        var id = $(this).closest('tr').find('td:eq(0)').text();
+        var firstname = $(this).closest('tr').find('td:eq(1)').text();
+        var lastname = $(this).closest('tr').find('td:eq(2)').text();
+        var email = $(this).closest('tr').find('td:eq(3)').text();
+        $("#updatefirstname").val(firstname);
+        $("#updatelastname").val(lastname);
+        $("#updateemail").val(email);
         $("#updateModal").modal();
+
+        $("#save_btn").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "update-user.php",
+                data:{
+                    id,
+                    updatefirstname   : $("#updatefirstname").val(),  
+                    updatelastname    : $("#updatelastname").val(),   
+                    updateemail       : $("#updateemail").val()
+                },
+                success: function (updatemsg){
+                    $("#updatemsg").html(updatemsg);
+                    //$("#updateModal").modal('hide');
+                }
+            });
+        });
     });
 
-    $("#b_Del").click(function() {
+    $( "table tbody" ).on( "click", "#b_Del", function(){
         var del_id = $(this).closest('tr').find('td:eq(0)').text();
         var $ele = $(this).parent().parent();
-        alert(del_id);
         $.ajax({
             type: "POST",
             url: "delete-user.php",
@@ -26,8 +50,11 @@ var validation = (function() {
                     alert("can't delete the row");
                 }
             }
-
+        });
     });
+
+    $("#close_btn").on("click", function(){
+        location.reload();
     });
 
 

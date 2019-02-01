@@ -20,10 +20,6 @@
                 $flag += 1;
             }
     }
-    if (empty($middlename))
-    {
-        $flag = 0;
-    }
     
     
     if ($flag == 0)

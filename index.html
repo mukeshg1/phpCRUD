@@ -18,7 +18,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
     <title>Homepage</title>
   </head>
   <body class="body">
@@ -27,7 +26,7 @@
 	  </div>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
 		<a href="index.html" ><img class="logo" src="logo2.png"></a> 
-		<form id="loginform" method="POST" style="padding-left:50%; margin-top:10px;" action="userprofile.php">
+		<form id="loginform" method="POST" action="userprofile.php" style="padding-left:50%; margin-top:10px;">
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<input type="email" class="form-control" name="loginemail" id="loginemail" placeholder="Enter Email*">
@@ -36,9 +35,10 @@
 					<input type="password" class="form-control" name="loginpassword" autocomplete="off" placeholder="Enter Password*">
 				</div>
 				<div class="form-group col-md-1">
-					<button class="btn btn-default btn-md" name="login_btn" id="login_btn">Login</button>
+					<button class="btn btn-default btn-md" name="login_btn" id="1login_btn">Login</button>
 				</div>
-			</div>
+            </div>
+            <div id="loginmsg"></div>
 		</form>
 	</nav>
 	<form id="register_form" class="registerform" method="post">

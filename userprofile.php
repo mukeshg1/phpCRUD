@@ -1,18 +1,13 @@
 <?php
     session_start();
-
-    include("constants.php");
+    $loginemail = false;
+    $loginpassword = false;
+    require_once 'constants.php';
     $dbconn = mysqli_connect(SERVER, USER, PASSWORD, DB) or
     exit("Database Error! Try after sometime.");
 
-    if(isset($_POST['loginemail']))
-    {
-        $loginemail = mysqli_real_escape_string($dbconn, $_POST['loginemail']);
-    }
-    if(isset($_POST['loginpassword']))
-    {
-        $loginpassword = mysqli_real_escape_string($dbconn, $_POST['loginpassword']);
-    }
+    $loginemail = mysqli_real_escape_string($dbconn, $_POST['loginemail']);
+    $loginpassword = mysqli_real_escape_string($dbconn, $_POST['loginpassword']);
    
 
     $sql = "select * from user where email = '$loginemail' ";
