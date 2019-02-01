@@ -61,6 +61,7 @@ $conn->close();
 ?>
     </tbody>
     </table>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script language="javascript" type="text/javascript" src="crud.js"></script>
     </body>
     </html>
