@@ -56,7 +56,7 @@ if (ISSET($_SESSION['user']))
                         </div>
                     </nav>
                     <div class="card-header">
-                        Welcome, <?php echo $user ?>!
+                        Welcome, <?php echo $rows["firstname"]. " " . $rows["lastname"] ?>!
                     </div>
                     <div class="col-sm-6">
                         <div class="card">
