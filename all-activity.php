@@ -1,4 +1,11 @@
 <?php
+/*
+File Name    : all-activity.php
+File Path    : C:\xampp\htdocs\phpCRUD
+Description  : PHP page which displays all the user activity stored in 'activity' table from database 'crudphp'
+Created date : 04/02/2019
+Author       : Mukesh
+*/
 session_start();
 // Create connection
 $SERVER = '127.0.0.1';

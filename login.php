@@ -1,4 +1,12 @@
 <?php
+
+    /*
+    File Name    : login.php
+    File Path    : C:\xampp\htdocs\phpCRUD
+    Description  : PHP page which logs in user
+    Created date : 04/02/2019
+    Author       : Mukesh
+    */
     session_start();
     $loginemail = false;
     $loginpassword = false;

@@ -1,10 +1,9 @@
 <!--
- File Name    : RegForm.html
- File Path    : C:\xampp\htdocs\PHP
- Description  : Registration Form to take input from users 
- Created date : 23/01/2019
- @Author      : Mukesh
- Comments     : Validation is also done here using jQuery validation plugin tool
+File Name    : index.html
+File Path    : C:\xampp\htdocs\phpCRUD
+Description  : Home page which consists of Registration Form and Login form 
+Created date : 23/01/2019
+Author      : Mukesh
 -->
 
 <!DOCTYPE html>
@@ -45,6 +44,7 @@
 		<h2>Create an account</h2>
         <label><i>It's free and takes only a minute.</i></label>
 		<div id="message"></div>
+		<label>Name:</label>
         <div class="form-row">
 			<div class="form-group col-md-6">
 				<input type="text" class="form-control" name="firstname" id="firstname" autocomplete="off" placeholder="First Name*">
@@ -53,9 +53,11 @@
 				<input type="text" class="form-control" name="lastname" id="lastname" autocomplete="off" placeholder="Last Name*">
 			</div>
 		</div>
+		<label>E-Mail Address:</label>
 		<div class="form-group col-md-13">
 			<input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email*">
-		</div>       
+		</div> 
+		<label>Password:</label>      
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<input type="password" class="form-control" id="password1" name="password1" autocomplete="off" placeholder="Password*">

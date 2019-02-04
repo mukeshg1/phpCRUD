@@ -1,4 +1,14 @@
 <?php
+
+/*
+File Name    : userprofile.php
+File Path    :C:\xampp\htdocs\phpCRUD
+Description  : PHP page which displays the profile of a logged in user
+Created date : 04/02/2019
+Author      : Mukesh
+*/
+
+
 session_start();
 if (ISSET($_SESSION['user']))
 {
@@ -18,6 +28,7 @@ if (ISSET($_SESSION['user']))
     $rows = mysqli_fetch_array($result);
     if($rows)
     {
+    //User profile is displayed below.
     ?>
                 <html>
                 <head>

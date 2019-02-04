@@ -1,3 +1,11 @@
+/*
+File Name    : activity.js
+File Path    : C:\xampp\htdocs\phpCRUD
+Description  : Javascript page which makes an AJAX call whenever user performs any activity.
+Created date : 04/02/2019
+Author       : Mukesh
+*/
+
 var activity = (function() {
 
     

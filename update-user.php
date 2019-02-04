@@ -1,4 +1,11 @@
 <?php
+/*
+File Name    : update-user.php
+File Path    : C:\xampp\htdocs\phpCRUD
+Description  : PHP page which updates user data in 'activity' table in database 'crudphp'
+Created date : 04/02/2019
+Author       : Mukesh
+*/
 require_once 'constants.php';
 
 $db = mysqli_connect(SERVER, USER, PASSWORD, DB);

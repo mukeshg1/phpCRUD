@@ -1,11 +1,9 @@
-/**
-* File Name    : validation.js
-* File Path    : C:\xampp\htdocs\PHP
-* Description  : Validation file to validate form data 
-* Created date : 23/01/2019
-* @Author      : Mukesh
-* Comments     : Real time validation of data entered through form
-*
+/*
+File Name    : validation.js
+File Path    : C:\xampp\htdocs\phpCRUD
+Description  : JS page to perform real time validation for registration form
+Created date : 04/02/2019
+Author       : Mukesh
 */
 
 var validation = (function() {
@@ -13,6 +11,7 @@ var validation = (function() {
     
     var form = $( "#register_form" );
     $.validator.setDefaults({
+        //error class is added when validation fails
         highlight: function(element) {
           $(element)
             .closest('.form-group')
@@ -26,6 +25,7 @@ var validation = (function() {
         success: "valid"
     });
     (form).validate({
+        //Validation rules
         rules: {
             firstname: {
                 required: true,
@@ -53,6 +53,7 @@ var validation = (function() {
                 digits: true
             }
         },
+        //Custom Error messages 
         messages: {
             firstname: {
                 required: 'Please enter firstname.',
@@ -78,7 +79,7 @@ var validation = (function() {
         }        
     });
 
-
+    //AJAX call is made when submit button is made
     $("#submit_btn").click(function() {        
         if (form.valid() === true)
         {
@@ -95,6 +96,7 @@ var validation = (function() {
                 {
                     if (data="YES")
                     {
+                        //After success AJAX call, it redirects to userprofile.php page
                         window.location.href = 'userprofile.php';
                     }
                     else

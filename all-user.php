@@ -1,4 +1,14 @@
 <?php
+
+/*
+File Name    : all-user.php
+File Path    : C:\xampp\htdocs\phpCRUD
+Description  : PHP page which displays all the user in a table 'user' of database 'crudphp'
+Created date : 04/02/2019
+Author       : Mukesh
+*/
+
+
 session_start();
 // Create connection
 include 'constants.php';

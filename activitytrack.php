@@ -1,4 +1,12 @@
 <?php
+
+    /*
+    File Name    : activity.php
+    File Path    : C:\xampp\htdocs\phpCRUD
+    Description  : PHP page which stores all the user activity in 'activity' table inside database 'crudphp'
+    Created date : 04/02/2019
+    Author       : Mukesh
+    */
     session_start();
     $SERVER = '127.0.0.1';
     $USER = 'root';

@@ -1,5 +1,13 @@
 <?php
 
+    /*
+    File Name    : add-user.php
+    File Path    : C:\xampp\htdocs\phpCRUD
+    Description  : PHP page which adds user into 'activity' table in database 'crudphp'
+    Created date : 04/02/2019
+    Author       : Mukesh
+    */
+
     session_start();
     require_once 'constants.php';
 
