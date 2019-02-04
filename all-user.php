@@ -30,6 +30,9 @@ $result = $conn->query($sql);
                     <a class="nav-link" href="all-user.php">All users</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="all-activity.php">Activities</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="logoutuser.php">Logout</a>
                 </li>
             </ul>
@@ -102,6 +105,7 @@ $conn->close();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script language="javascript" type="text/javascript" src="crud.js"></script>
+    <script language="javascript" type="text/javascript" src="activity.js"></script>
     </body>
     </html>
 <?php }

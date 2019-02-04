@@ -36,6 +36,9 @@ if (ISSET($_SESSION['user']))
                                 <a class="nav-link" href="all-user.php">All users</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="all-activity.php">Activities</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="logoutuser.php">Logout</a>
                             </li>
                             </ul>
