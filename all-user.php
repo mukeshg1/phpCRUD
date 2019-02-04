@@ -1,17 +1,15 @@
 <?php
-
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "crudphp";
-
+session_start();
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'constants.php';
+$conn = mysqli_connect(SERVER, USER, PASSWORD, DB);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+if (ISSET($_SESSION['user']))
+{
 $sql = "SELECT * FROM user";
 $result = $conn->query($sql);
 ?>
@@ -22,7 +20,7 @@ $result = $conn->query($sql);
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="#" ><img class="logo" src="logo2.png"></a> 
+        <a href="userprofile.php" ><img class="logo" src="logo2.png"></a> 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -37,7 +35,7 @@ $result = $conn->query($sql);
             </ul>
         </div>
     </nav>
-    <table class="table table-bordered">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -57,7 +55,7 @@ if ($result->num_rows > 0) {
         <input class='btn btn-secondary' type='button' value='Delete' id='b_Del'></td></tr>";
     }
 } else {
-    echo "0 results";
+    echo "No records to show.";
 }
 $conn->close();
 ?>
@@ -106,3 +104,8 @@ $conn->close();
     <script language="javascript" type="text/javascript" src="crud.js"></script>
     </body>
     </html>
+<?php }
+else{
+    include 'index.html';
+    echo "<p style='color:white;'>Error: Invalid Session</p>";
+}

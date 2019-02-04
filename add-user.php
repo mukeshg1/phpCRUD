@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
     require_once 'constants.php';
 
     $db = mysqli_connect(SERVER, USER, PASSWORD, DB);
@@ -15,10 +16,10 @@
 
     foreach($_POST as $key => $value) 
     {
-            if (empty($value))
-            {
-                $flag += 1;
-            }
+        if (empty($value))
+        {
+            $flag += 1;
+        }
     }
     
     
@@ -29,13 +30,15 @@
             $password1 = password_hash($password1, PASSWORD_BCRYPT);
             $sql = "INSERT INTO user (firstname, lastname, email, password1) VALUES ('$firstname',
                                       '$lastame', '$email', '$password1')";
-            if ($db->query($sql) === TRUE){
-                //do nothing
-             }
-             else 
-             {
+            
+            if ($db->query($sql) === TRUE)
+            {
+                $_SESSION['user'] = $email;
+            }
+            else 
+            {
                 echo "Registration Unsuccessfull";
-             }
+            }
         }
         
         catch (mysqli_sql_exception $e)

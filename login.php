@@ -13,7 +13,7 @@
     $sql = "select * from user where email = '$loginemail' ";
     if(!$dbconn)
     {
-        echo "Error connecting to database..";
+        echo "<p style='color:white;'>Error connecting to database...</p>";
     }
     $result = mysqli_query($dbconn,$sql);
     $rows = mysqli_fetch_array($result);
@@ -24,17 +24,18 @@
         {
             $_SESSION['user'] = $loginemail;
             header('Location: userprofile.php');
+            exit;
         }
         else
         {
             require 'index.html';
-            echo "email address or password is invalid.";
+            echo "<p style='color:white;'>Error: Email or Password is invalid.</p>";
         }
     }
     else
     {
         require 'index.html';
-        echo "Invalid username or password";
+        echo "<p style='color:white;'>Error: Email or Password is invalid.</p>";
     }
 ?>
 

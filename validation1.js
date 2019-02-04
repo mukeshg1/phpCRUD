@@ -74,26 +74,12 @@ var validation = (function() {
             password2: {
                 required: 'Please re-enter password.',
                 equalTo: 'Password doesnot match, please enter same password.'
-            },
-            phone: {
-                required: 'Please enter phone number. '
             }
         }        
     });
 
 
-    $("#submit_btn").click(function() {
-        /*$.ajax({
-            type: "POST",
-            url: "Token.php",
-            data: {
-                token       : $("#token").val()
-            },
-            error: function(){
-                success = false;
-            }
-        });*/
-        
+    $("#submit_btn").click(function() {        
         if (form.valid() === true)
         {
             $.ajax({
@@ -105,26 +91,17 @@ var validation = (function() {
                     email       : $("#email").val(),
                     password1   : $("#password1").val()
                 },
-                start: function(){
-                    $("#loader").show();
-                },
-                success: function (msg){
-                    if (msg)
+                success: function(data)
+                {
+                    if (data="YES")
                     {
-                        $("#message").html(msg);
+                        window.location.href = 'userprofile.php';
                     }
                     else
                     {
-                        window.location = "#";
+                        $("#message").html(data);
                     }
-                },
-                error: function(msg) {
-                    $("#message").html(msg);
-                },
-                complete:function(){
-                    $('body, html').animate({scrollTop:$('form').offset().top}, 'slow');
-                    $("#loader").hide();
-                 }
+                }
             });
             $(form)[0].reset();
             
@@ -136,29 +113,8 @@ var validation = (function() {
             $("#message").html("Enter valid details.");
         }
     });
-    
-    $("#login_btn").click(function(){
-
-        $.ajax({
-            type: "POST",
-            url: "userprofile.php",
-            data:{
-                loginemail     : $("#loginemail").val(),  
-                loginpassword  : $("#loginpassword").val(),   
-            },
-            success: function (loginmsg){
-                $("#loginmsg").html(loginmsg);
-                window.loader = "userprofile.php";
-            }
-
-        });
-        return false;
-
-    });
-    
     return
     {
         
     }
-
 })();

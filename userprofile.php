@@ -1,5 +1,8 @@
 <?php
-    session_start();
+session_start();
+if (ISSET($_SESSION['user']))
+{
+    $user = false;
     include 'constants.php';
     $dbconn = mysqli_connect(SERVER, USER, PASSWORD, DB) or
     exit("Database Error! Try after sometime.");
@@ -15,9 +18,7 @@
     $rows = mysqli_fetch_array($result);
     if($rows)
     {
-            if (ISSET($_SESSION['user']))
-            {
-            ?>
+    ?>
                 <html>
                 <head>
                     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -25,11 +26,11 @@
                 </head>
                 <body>
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a href="#" ><img class="logo" src="logo2.png"></a> 
+                    <a href="userprofile.php" ><img class="logo" src="logo2.png"></a> 
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="userprofile.php">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="all-user.php">All users</a>
@@ -65,13 +66,13 @@
         else
         {
             require 'index.html';
-            echo "email address or password is invalid.";
+            echo "<p style='color: 'white'>email address or password is invalid.</p>";
         }
     }
     else
     {
         require 'index.html';
-        echo "Invalid username or password";
+        echo "<p style='color: 'white'>Error: Invalid session.</p>";
     }
 ?>
 

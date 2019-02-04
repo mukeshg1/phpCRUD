@@ -1,4 +1,4 @@
-var validation = (function() {
+var crud = (function() {
 
     
     $( "table tbody" ).on( "click", "#b_Update", function(){
