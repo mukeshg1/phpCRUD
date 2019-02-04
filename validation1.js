@@ -66,7 +66,7 @@ var validation = (function() {
                 lettersonly: 'lastname should only contain letters.'
             },
             email: {
-                required: 'please enter an email address.',
+                required: 'Please enter an email address.',
                 email: 'Please enter a valid email address!'
             },
             password1:{
